@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo hello world
+
+
+exec kitty java -jar TerminalKalkylator.jar &
+bash -c 'sleep 0.2s;i3-msg floating enable;i3-msg resize set 600px 500px'
+
