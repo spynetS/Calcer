@@ -13,7 +13,7 @@ arch=(x86_64)
 url="https://github.com/spynetS/Calcer"
 license=('MIT')
 groups=()
-depends=(git,java)
+depends=("git" "jre-openjdk")
 makedepends=()
 checkdepends=()
 optdepends=()
@@ -30,8 +30,9 @@ md5sums=('SKIP')
 validpgpkeys=()
 
 prepare() {
-    sudo rm /usr/bin/JCalc.jar
-    sudo rm /usr/bin/Calcer
+
+    sudo rm -f /usr/bin/JCalc.jar
+    sudo rm -f /usr/bin/calcer
     git clone $url calcergit
     git clone https://github.com/spynetS/JCalc
 }
