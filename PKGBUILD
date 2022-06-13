@@ -10,11 +10,11 @@ pkgrel=1
 epoch=
 pkgdesc="Calculator for i3"
 arch=(x86_64)
-url=""
+url="https://github.com/spynetS/Calcer"
 license=('MIT')
 groups=()
-depends=()
-makedepends=(git)
+depends=(git,java)
+makedepends=()
 checkdepends=()
 optdepends=()
 provides=()
@@ -24,19 +24,22 @@ backup=()
 options=()
 install=
 changelog=
-source=(git+$url)
+source=("git+$url")
 noextract=()
-md5sums=()
+md5sums=('SKIP')
 validpgpkeys=()
 
 prepare() {
+    sudo rm /usr/bin/JCalc.jar
+    sudo rm /usr/bin/Calcer
     git clone $url calcergit
-    git clone https://github/spynetS/JCalc.git
-
+    git clone https://github.com/spynetS/JCalc
 }
+
+
 package() {
     
-    mv ./JCalc/out/artifacts/TerminalKalkylator_jar/TerminalKalkylator.jar /usr/bin/JCalc.jar
-    mv ./calcergit/calcer /usr/bin/calcer
+    sudo mv ./JCalc/out/artifacts/JCalc_jar/JCalc.jar /usr/bin/JCalc.jar
+    sudo mv ./calcergit/calcer /usr/bin/calcer
 
 }
