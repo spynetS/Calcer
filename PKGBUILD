@@ -5,16 +5,16 @@
 
 # Maintainer: Alfred Roos <alfred@stensatter.se>
 pkgname=Calcer-git
-pkgver=1
-pkgrel=1
+pkgver=2
+pkgrel=2
 epoch=
-pkgdesc="Calculator for i3"
+pkgdesc="Java based terminal calculator"
 arch=(x86_64)
 url="https://github.com/spynetS/Calcer"
 license=('MIT')
 groups=()
-depends=("git" "jre-openjdk")
-makedepends=()
+depends=("git" )
+makedepends=("jre-openjdk")
 checkdepends=()
 optdepends=()
 provides=()
@@ -30,7 +30,6 @@ md5sums=('SKIP')
 validpgpkeys=()
 
 prepare() {
-
     sudo rm -f /usr/bin/JCalc.jar
     sudo rm -f /usr/bin/calcer
     git clone $url calcergit

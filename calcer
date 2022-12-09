@@ -1,5 +1,10 @@
 #!/bin/bash
 
-exec kitty java -jar /usr/bin/JCalc.jar &
-bash -c 'sleep 0.2s;i3-msg floating enable;i3-msg resize set 600px 500px'
+if [[ $1 == "-n" ]];
+then
+    exec kitty java -jar /usr/bin/JCalc.jar &
+else
+    echo Ctr+C to exit
+    exec java -jar /usr/bin/JCalc.jar 
+fi
 
